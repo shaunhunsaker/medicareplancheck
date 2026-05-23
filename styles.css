@@ -693,8 +693,9 @@ details[open] .faq-question::after { content: '−'; }
   /* Header */
   .header-label { display: none; }
   .header-inner { gap: 8px; }
-  .logo { font-size: 1.1rem; }
-  .btn-phone { padding: 9px 14px; font-size: .82rem; }
+  .logo { font-size: 1rem; }
+  .btn-phone { padding: 9px 10px; font-size: .78rem; gap: 5px; }
+  .site-header { padding: 10px 0; }
 
   /* Stats bar — 2×2 grid, no overflow */
   .stats-inner { flex-wrap: wrap; justify-content: center; gap: 0; }

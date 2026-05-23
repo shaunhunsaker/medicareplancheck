@@ -710,6 +710,8 @@ details[open] .faq-question::after { content: '−'; }
   .otc-hero-card { padding: 24px 20px; border-radius: 14px; max-width: 100%; }
   .otc-amount span { font-size: 2.8rem; }
   .otc-card-badge { font-size: .7rem; white-space: normal; }
+  .otc-extras .btn { font-size: .88rem; padding: 13px 16px; white-space: normal; text-align: center; line-height: 1.3; }
+  .otc-extra-item p { word-break: break-word; }
 
   /* General */
   .cta-banner-inner { flex-direction: column; text-align: center; }

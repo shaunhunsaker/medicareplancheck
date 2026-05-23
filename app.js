@@ -1,3 +1,45 @@
+// ===== CONFETTI =====
+function launchConfetti() {
+  const canvas = document.getElementById('confettiCanvas');
+  const ctx = canvas.getContext('2d');
+  canvas.width  = window.innerWidth;
+  canvas.height = window.innerHeight;
+
+  const colors = ['#1a56db','#0a8f5c','#f59e0b','#e11d48','#7dd3fc','#4ade80'];
+  const pieces = Array.from({ length: 120 }, () => ({
+    x:  Math.random() * canvas.width,
+    y:  Math.random() * -canvas.height,
+    w:  6 + Math.random() * 8,
+    h:  10 + Math.random() * 6,
+    color: colors[Math.floor(Math.random() * colors.length)],
+    rot: Math.random() * 360,
+    vx: -2 + Math.random() * 4,
+    vy: 3 + Math.random() * 4,
+    vr: -3 + Math.random() * 6,
+  }));
+
+  let frame;
+  let elapsed = 0;
+  function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    pieces.forEach(p => {
+      ctx.save();
+      ctx.translate(p.x + p.w / 2, p.y + p.h / 2);
+      ctx.rotate(p.rot * Math.PI / 180);
+      ctx.fillStyle = p.color;
+      ctx.fillRect(-p.w / 2, -p.h / 2, p.w, p.h);
+      ctx.restore();
+      p.x  += p.vx;
+      p.y  += p.vy;
+      p.rot += p.vr;
+    });
+    elapsed++;
+    if (elapsed < 180) frame = requestAnimationFrame(draw);
+    else { ctx.clearRect(0, 0, canvas.width, canvas.height); }
+  }
+  draw();
+}
+
 // Sticky header shadow on scroll
 const header = document.getElementById('siteHeader');
 window.addEventListener('scroll', () => {
@@ -178,6 +220,7 @@ document.getElementById('formSubmit').addEventListener('click', async () => {
   document.querySelectorAll('.form-step').forEach(s => s.classList.add('hidden'));
   document.getElementById('successPhone').textContent = phone;
   document.getElementById('stepSuccess').classList.remove('hidden');
+  launchConfetti();
 });
 
 document.getElementById('phoneBack').addEventListener('click', () => goToStep(2));

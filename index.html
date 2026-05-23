@@ -52,7 +52,7 @@
         </div>
         <ul class="hero-trust-list">
           <li><span class="check">&#10003;</span> Same-day enrollment available</li>
-          <li><span class="check">&#10003;</span> Compare 30+ top carriers</li>
+          <li><span class="check">&#10003;</span> $0 cost consultation &mdash; no strings attached</li>
           <li><span class="check">&#10003;</span> No pushy sales &mdash; just honest answers</li>
         </ul>
       </div>
@@ -76,9 +76,9 @@
           <!-- STEP 1: ZIP -->
           <div class="form-step" id="step1">
             <div class="form-step-header">
-              <p class="form-eyebrow">Step 1 of 3</p>
-              <h3 class="form-title">Find Plans in Your Area</h3>
-              <p class="form-sub">Enter your ZIP code to see Medicare plans near you.</p>
+              <p class="form-eyebrow">&#127919; Check 1 of 3 &mdash; Let&rsquo;s Go!</p>
+              <h3 class="form-title">Unlock Plans in Your Area</h3>
+              <p class="form-sub">Enter your ZIP to reveal Medicare plans available near you.</p>
             </div>
             <div class="form-field">
               <label for="zipInput">ZIP Code</label>
@@ -86,7 +86,7 @@
               <span class="field-error" id="zipError"></span>
             </div>
             <button class="btn btn-primary btn-block btn-form" id="zipNext">
-              See My Plans &rarr;
+              Unlock My Plans &rarr;
             </button>
             <p class="form-fine">Plans and benefits vary by location.</p>
           </div>
@@ -94,9 +94,9 @@
           <!-- STEP 2: Name -->
           <div class="form-step hidden" id="step2">
             <div class="form-step-header">
-              <p class="form-eyebrow">Step 2 of 3</p>
-              <h3 class="form-title">What&rsquo;s Your Name?</h3>
-              <p class="form-sub">So your licensed agent can greet you properly.</p>
+              <p class="form-eyebrow">&#9989; Check 2 of 3 &mdash; Great Progress!</p>
+              <h3 class="form-title">Who Are We Looking Up?</h3>
+              <p class="form-sub">Personalize your results so your agent is ready for you.</p>
             </div>
             <div class="form-row">
               <div class="form-field">
@@ -111,7 +111,7 @@
               </div>
             </div>
             <button class="btn btn-primary btn-block btn-form" id="nameNext">
-              Continue &rarr;
+              Keep Going &rarr;
             </button>
             <button class="btn-back" id="nameBack">&larr; Back</button>
           </div>
@@ -119,9 +119,9 @@
           <!-- STEP 3: Phone -->
           <div class="form-step hidden" id="step3">
             <div class="form-step-header">
-              <p class="form-eyebrow">Step 3 of 3 &mdash; Almost done!</p>
-              <h3 class="form-title">Your Phone Number</h3>
-              <p class="form-sub">A licensed agent will call you at the best time for you.</p>
+              <p class="form-eyebrow">&#127942; Final Step &mdash; Almost There!</p>
+              <h3 class="form-title">Claim Your Free Results</h3>
+              <p class="form-sub">A licensed agent will call to reveal your personalized plan options.</p>
             </div>
             <div class="form-field">
               <label for="phoneInput">Phone Number</label>
@@ -136,20 +136,21 @@
               <span class="field-error" id="tcpaError"></span>
             </div>
             <button class="btn btn-primary btn-block btn-form" id="formSubmit">
-              Get My Free Quote &rarr;
+              Claim My Free Quote &rarr;
             </button>
             <button class="btn-back" id="phoneBack">&larr; Back</button>
           </div>
 
           <!-- SUCCESS STATE -->
           <div class="form-step hidden" id="stepSuccess">
-            <div class="success-icon">&#10003;</div>
+            <div class="success-icon">&#127942;</div>
+            <div class="achievement-banner">&#127881; Benefits Unlocked!</div>
             <h3 class="success-title">You&rsquo;re All Set!</h3>
-            <p class="success-sub">A licensed Medicare specialist will call you shortly at <strong id="successPhone"></strong>.</p>
-            <p class="success-or">Can&rsquo;t wait? Call us now:</p>
+            <p class="success-sub">Your Medicare specialist is ready to reveal your plan options. Expect a call at <strong id="successPhone"></strong>.</p>
+            <p class="success-or">Want your results now?</p>
             <a href="tel:18773391956" class="btn btn-primary btn-block btn-xl">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
-              1-877-339-1956
+              Call Now: 1-877-339-1956
             </a>
             <p class="form-fine" style="margin-top:12px">Mon&ndash;Fri 8am&ndash;8pm ET &nbsp;&#183;&nbsp; Sat 9am&ndash;5pm ET</p>
           </div>
@@ -163,8 +164,8 @@
   <section class="stats-bar">
     <div class="container stats-inner">
       <div class="stat">
-        <span class="stat-number">$0</span>
-        <span class="stat-label">Cost to You</span>
+        <span class="stat-number stat-text">$0</span>
+        <span class="stat-label">Cost Consultation</span>
       </div>
       <div class="stat-divider"></div>
       <div class="stat">
@@ -173,12 +174,12 @@
       </div>
       <div class="stat-divider"></div>
       <div class="stat">
-        <span class="stat-number">No</span>
+        <span class="stat-number stat-text">No</span>
         <span class="stat-label">Obligation</span>
       </div>
       <div class="stat-divider"></div>
       <div class="stat">
-        <span class="stat-number">Same</span>
+        <span class="stat-number stat-text">Same</span>
         <span class="stat-label">Day Enrollment</span>
       </div>
     </div>
@@ -422,6 +423,7 @@
     </div>
   </footer>
 
+  <canvas id="confettiCanvas"></canvas>
   <script src="app.js"></script>
 </body>
 </html>

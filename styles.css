@@ -755,6 +755,73 @@ details[open] .faq-question::after { content: '−'; }
   margin-bottom: 12px;
 }
 
+/* ===== STAT FONT NORMALIZATION ===== */
+/* Word-based stats (No, Same, $0) match numeric stat size */
+.stat-number.stat-text { font-size: 2.2rem; }
+
+/* ===== GAMIFICATION ===== */
+
+/* Step slide transition */
+.form-step {
+  animation: stepIn .3s ease;
+}
+@keyframes stepIn {
+  from { opacity: 0; transform: translateX(18px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+/* Progress bar shimmer */
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position:  200% center; }
+}
+.form-progress-bar {
+  background: linear-gradient(90deg, #0a8f5c 0%, #4ade80 50%, #0a8f5c 100%);
+  background-size: 200% auto;
+  animation: shimmer 2s linear infinite;
+}
+
+/* Achievement banner on success */
+.achievement-banner {
+  background: linear-gradient(90deg, #f59e0b, #fbbf24);
+  color: #1f2937;
+  font-size: .88rem;
+  font-weight: 800;
+  text-align: center;
+  padding: 7px 16px;
+  border-radius: 100px;
+  display: inline-block;
+  margin: 0 auto 14px;
+  letter-spacing: .03em;
+  animation: badgePop .4s cubic-bezier(.175,.885,.32,1.275) both;
+}
+#stepSuccess { text-align: center; }
+#stepSuccess .achievement-banner { display: block; }
+
+@keyframes badgePop {
+  from { transform: scale(0.5); opacity: 0; }
+  to   { transform: scale(1);   opacity: 1; }
+}
+
+/* Dot pulse on completion */
+.form-step-dot.done {
+  animation: dotPulse .35s ease;
+}
+@keyframes dotPulse {
+  0%   { transform: scale(1); }
+  50%  { transform: scale(1.4); }
+  100% { transform: scale(1); }
+}
+
+/* Confetti canvas */
+#confettiCanvas {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+}
+
 /* ===== PULSE ANIMATION ON PHONE BUTTONS ===== */
 @keyframes pulse-ring {
   0%   { box-shadow: 0 0 0 0 rgba(26,86,219,.5); }

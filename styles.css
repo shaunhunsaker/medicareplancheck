@@ -325,6 +325,157 @@ img { display: block; max-width: 100%; }
 
 .how-cta { text-align: center; margin-top: 48px; }
 
+/* ===== OTC / EXTRA BENEFITS ===== */
+.otc-section {
+  background: linear-gradient(135deg, #0f2d5e 0%, #1a3a6e 100%);
+  color: var(--white);
+  text-align: center;
+}
+
+.otc-eyebrow {
+  font-size: .9rem;
+  font-weight: 700;
+  color: #fbbf24;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  margin-bottom: 12px;
+}
+
+.otc-title {
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-weight: 800;
+  margin-bottom: 12px;
+  color: var(--white);
+}
+
+.otc-sub {
+  font-size: 1.05rem;
+  color: rgba(255,255,255,.75);
+  max-width: 600px;
+  margin: 0 auto 48px;
+  line-height: 1.7;
+}
+
+.otc-card-row {
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  gap: 40px;
+  align-items: start;
+  text-align: left;
+}
+
+/* Left: the big OTC reward card */
+.otc-hero-card {
+  background: linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%);
+  border-radius: 20px;
+  padding: 36px 32px;
+  color: #1f2937;
+  box-shadow: 0 12px 40px rgba(0,0,0,.3);
+  position: relative;
+  overflow: hidden;
+}
+.otc-hero-card::before {
+  content: '';
+  position: absolute;
+  top: -40px; right: -40px;
+  width: 160px; height: 160px;
+  border-radius: 50%;
+  background: rgba(255,255,255,.15);
+}
+
+.otc-amount-label {
+  font-size: .78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: rgba(31,41,55,.65);
+  margin-bottom: 6px;
+}
+
+.otc-amount {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 4px;
+  line-height: 1.1;
+}
+.otc-amount span {
+  font-size: 3.6rem;
+  font-weight: 800;
+  color: #0f2d5e;
+  display: block;
+}
+
+.otc-amount-sub {
+  font-size: .85rem;
+  color: rgba(31,41,55,.7);
+  margin-bottom: 20px;
+}
+
+.otc-uses {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 20px;
+  font-size: .92rem;
+  font-weight: 500;
+  color: #1f2937;
+}
+.otc-uses li { display: flex; align-items: center; gap: 8px; }
+
+.otc-card-badge {
+  background: rgba(15,45,94,.12);
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: .75rem;
+  font-weight: 600;
+  color: #0f2d5e;
+  text-align: center;
+}
+
+/* Right: extra benefits list */
+.otc-extras { display: flex; flex-direction: column; gap: 0; }
+
+.otc-extras-title {
+  font-size: .8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: rgba(255,255,255,.5);
+  margin-bottom: 20px;
+}
+
+.otc-extra-item {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(255,255,255,.1);
+}
+.otc-extra-item:last-of-type { border-bottom: none; }
+
+.otc-extra-icon { font-size: 1.8rem; flex-shrink: 0; margin-top: 2px; }
+
+.otc-extra-item strong {
+  display: block;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 4px;
+}
+.otc-extra-item p {
+  font-size: .88rem;
+  color: rgba(255,255,255,.65);
+  line-height: 1.6;
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .otc-card-row { grid-template-columns: 1fr; }
+  .otc-hero-card { max-width: 400px; margin: 0 auto; }
+}
+
 /* ===== PLANS ===== */
 .plans-section { background: var(--white); }
 

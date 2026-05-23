@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html><head>
+<meta charset="UTF-8"/>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{width:300px;height:250px;overflow:hidden;font-family:'Arial',sans-serif;background:#0f2d5e;cursor:pointer;}
+  .wrap{width:300px;height:250px;position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:18px;}
+
+  /* Animated background shimmer */
+  .bg-shine{position:absolute;top:0;left:-100%;width:60%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.04),transparent);animation:shine 3s ease-in-out infinite;}
+  @keyframes shine{0%{left:-100%}50%{left:150%}100%{left:150%}}
+
+  /* Gift icon */
+  .icon{font-size:28px;margin-bottom:6px;animation:bounce 2s ease-in-out infinite;}
+  @keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+
+  /* Eyebrow */
+  .eyebrow{font-size:10px;font-weight:700;letter-spacing:.12em;color:#fbbf24;text-transform:uppercase;margin-bottom:6px;}
+
+  /* Amount card */
+  .amount-card{background:linear-gradient(135deg,#f59e0b,#fbbf24);border-radius:10px;padding:10px 20px;text-align:center;margin-bottom:10px;animation:pop .6s cubic-bezier(.175,.885,.32,1.275) .3s both;}
+  @keyframes pop{from{transform:scale(0.7);opacity:0}to{transform:scale(1);opacity:1}}
+  .amount-pre{font-size:10px;font-weight:600;color:rgba(15,45,94,.7);}
+  .amount{font-size:38px;font-weight:900;color:#0f2d5e;line-height:1;}
+  .amount-sub{font-size:10px;font-weight:600;color:rgba(15,45,94,.75);}
+
+  /* Body copy */
+  .body{font-size:10.5px;color:rgba(255,255,255,.82);text-align:center;line-height:1.45;margin-bottom:12px;animation:fadeUp .5s ease .6s both;}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+
+  /* CTA */
+  .cta{background:#1a56db;color:#fff;font-size:12px;font-weight:800;padding:9px 22px;border-radius:100px;animation:fadeUp .5s ease .8s both,pulseCta 2.2s ease 1.5s infinite;}
+  @keyframes pulseCta{0%,100%{box-shadow:0 0 0 0 rgba(26,86,219,.5)}70%{box-shadow:0 0 0 8px rgba(26,86,219,0)}}
+
+  /* Disclaimer */
+  .disc{position:absolute;bottom:4px;font-size:6.5px;color:rgba(255,255,255,.3);text-align:center;width:100%;padding:0 8px;}
+</style>
+</head>
+<body>
+<div class="wrap" onclick="window.open('https://www.medicareplancheck.org','_blank')">
+  <div class="bg-shine"></div>
+  <div class="icon">🎁</div>
+  <div class="eyebrow">Medicare Advantage Benefit</div>
+  <div class="amount-card">
+    <div class="amount-pre">Up to</div>
+    <div class="amount">$150</div>
+    <div class="amount-sub">per month in extra benefits</div>
+  </div>
+  <div class="body">Groceries · OTC items · Dental · Vision<br/>Many plans include this at $0 extra cost.</div>
+  <div class="cta">Check My Benefits →</div>
+  <div class="disc">Not affiliated with Medicare or the U.S. government. Benefits vary by plan and location.</div>
+</div>
+</body></html>

@@ -76,22 +76,34 @@
 
 ---
 
-### VIDEO SCRIPT A — 30-Second Spokesperson (HeyGen/Synthesia)
+### VIDEO SCRIPT A — 30-Second Educational (CTV / TTD) ⭐ START HERE
+*Use same avatar + voice for both A and B to keep the A/B variable clean.*
+*Export as: `MPC-Video-A-Educational.mp4`*
 
-> **[0-3 sec — HOOK]**
-> "If you're on Medicare, stop — you may be leaving money on the table every single month."
+> Did you know Medicare Advantage plans can include benefits most members have never used?
 >
-> **[3-10 sec — PROBLEM]**
-> "Most Medicare Advantage members don't know they could qualify for up to $150 a month in extra benefits — things like groceries, over-the-counter items, dental, and vision — all at no extra cost."
+> Things like a monthly allowance for groceries and over-the-counter items, dental, vision, and hearing coverage — often included at no extra cost.
 >
-> **[10-20 sec — SOLUTION]**
-> "At MedicarePlanCheck.org, our licensed agents help you find out exactly what you qualify for — completely free, no obligation. It takes about five minutes."
+> At MedicarePlanCheck.org, our licensed agents help you discover what's available in your area. It's completely free — no obligation, no pressure.
 >
-> **[20-27 sec — CTA]**
-> "Just call 1-877-339-1956 or visit MedicarePlanCheck.org. A real agent will walk you through everything — no robots, no hold music."
+> Call 1-877-339-1956. A real agent will walk you through everything.
 >
-> **[27-30 sec — DISCLAIMER]**
-> "Not affiliated with Medicare or the U.S. government. Benefits vary by plan and location."
+> Not affiliated with Medicare or the U.S. government. Benefits vary by plan and location.
+
+---
+
+### VIDEO SCRIPT A2 — 30-Second Direct Response (A/B Test vs Script A)
+*Export as: `MPC-Video-B-DirectResponse.mp4`*
+
+> If you're on Medicare, you may be leaving money on the table every single month.
+>
+> Most Medicare Advantage members don't know they could qualify for up to $150 a month in extra benefits — groceries, over-the-counter items, dental, and vision — at no extra cost.
+>
+> At MedicarePlanCheck.org, our licensed agents find out exactly what you qualify for — free, no obligation. Takes about five minutes.
+>
+> Call 1-877-339-1956. A real agent, no robots, no hold music.
+>
+> Not affiliated with Medicare or the U.S. government. Benefits vary by plan and location.
 
 ---
 

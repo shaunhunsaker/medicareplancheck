@@ -39,13 +39,16 @@
 ---
 
 ## BANNER SIZES AVAILABLE
-| File | Size | Angle |
-|------|------|-------|
-| 300x250-A-benefits.html | 300×250 | Extra Benefits (amber card) |
-| 300x250-B-zero-premium.html | 300×250 | $0 Premium (green) |
-| 300x250-C-question.html | 300×250 | Loss/Question (dark) |
-| 320x480-A-interstitial.html | 320×480 | Extra Benefits (full interstitial) |
-| 728x90-A-leaderboard.html | 728×90 | Extra Benefits (leaderboard) |
+| File | Size | Angle | Network Use |
+|------|------|-------|-------------|
+| 300x250-A-benefits.html | 300×250 | Extra Benefits (amber card) | Universal — most common placement |
+| 300x250-B-zero-premium.html | 300×250 | $0 Premium (green) | A/B test vs A |
+| 300x250-C-question.html | 300×250 | Loss/Question (dark) | A/B test vs A |
+| 320x480-A-interstitial.html | 320×480 | Extra Benefits (full interstitial) | Gaming / in-app interstitial |
+| 728x90-A-leaderboard.html | 728×90 | Extra Benefits (leaderboard) | Desktop programmatic |
+| 160x600-A-skyscraper.html | 160×600 | Extra Benefits (skyscraper) | Desktop sidebar / programmatic |
+| 300x600-A-halfpage.html | 300×600 | Extra Benefits (half page) | Premium programmatic / desktop |
+| 320x50-A-mobile-banner.html | 320×50 | Extra Benefits (mobile banner) | Mobile programmatic / in-app |
 
 ---
 

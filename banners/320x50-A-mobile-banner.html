@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html><head>
+<meta charset="UTF-8"/>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{width:320px;height:50px;overflow:hidden;font-family:'Arial',sans-serif;background:linear-gradient(90deg,#0f2d5e 0%,#1a3a6e 60%,#0a5e3a 100%);cursor:pointer;}
+  .wrap{width:320px;height:50px;display:flex;align-items:center;justify-content:space-between;padding:0 10px;gap:8px;}
+
+  .logo{font-size:9.5px;font-weight:900;color:#fff;white-space:nowrap;flex-shrink:0;animation:fadeIn .4s ease both;}
+  .logo span{color:#7dd3fc;}
+  @keyframes fadeIn{from{opacity:0}to{opacity:1}}
+
+  .divider{width:1px;height:26px;background:rgba(255,255,255,.18);flex-shrink:0;}
+
+  .badge{background:linear-gradient(135deg,#f59e0b,#fbbf24);border-radius:5px;padding:3px 7px;text-align:center;flex-shrink:0;animation:pop .5s cubic-bezier(.175,.885,.32,1.275) .2s both;}
+  @keyframes pop{from{transform:scale(0.8);opacity:0}to{transform:scale(1);opacity:1}}
+  .badge-amount{font-size:15px;font-weight:900;color:#0f2d5e;line-height:1;}
+  .badge-label{font-size:5.5px;font-weight:700;color:rgba(15,45,94,.7);text-transform:uppercase;letter-spacing:.04em;}
+
+  .copy{flex:1;min-width:0;animation:fadeUp .5s ease .3s both;}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:translateY(0)}}
+  .copy-head{font-size:10.5px;font-weight:800;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+  .copy-head span{color:#fbbf24;}
+  .copy-sub{font-size:7.5px;color:rgba(255,255,255,.55);margin-top:1px;}
+
+  .cta{background:#1a56db;color:#fff;font-size:9.5px;font-weight:900;padding:7px 11px;border-radius:5px;white-space:nowrap;flex-shrink:0;animation:fadeUp .5s ease .5s both,pulse 2.2s ease 1.5s infinite;}
+  @keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(26,86,219,.6)}70%{box-shadow:0 0 0 4px rgba(26,86,219,0)}}
+</style>
+</head>
+<body>
+<div class="wrap" onclick="window.open('https://www.medicareplancheck.org','_blank')">
+  <div class="logo">Medicare<span>Plan</span>Check</div>
+  <div class="divider"></div>
+  <div class="badge">
+    <div class="badge-amount">$150</div>
+    <div class="badge-label">monthly</div>
+  </div>
+  <div class="copy">
+    <div class="copy-head">Medicare could include <span>extra benefits</span></div>
+    <div class="copy-sub">Dental · Vision · OTC · $0 premiums available</div>
+  </div>
+  <div class="cta">Check Now →</div>
+</div>
+</body></html>

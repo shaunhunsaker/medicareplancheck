@@ -1,5 +1,6 @@
 /* ===== RESET & BASE ===== */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { overflow-x: hidden; max-width: 100%; }
 
 :root {
   --navy:    #0f2d5e;
@@ -689,10 +690,27 @@ details[open] .faq-question::after { content: '−'; }
 }
 
 @media (max-width: 600px) {
+  /* Header */
   .header-label { display: none; }
-  .stats-inner { gap: 0; }
-  .stat { padding: 16px 24px; }
-  .stat-divider { height: 36px; }
+  .header-inner { gap: 8px; }
+  .logo { font-size: 1.1rem; }
+  .btn-phone { padding: 9px 14px; font-size: .82rem; }
+
+  /* Stats bar — 2×2 grid, no overflow */
+  .stats-inner { flex-wrap: wrap; justify-content: center; gap: 0; }
+  .stat { width: 50%; padding: 16px 12px; }
+  .stat-number { font-size: 1.7rem; }
+  .stat-number.stat-text { font-size: 1.7rem; }
+  .stat-label { font-size: .72rem; }
+  .stat-divider { display: none; }
+
+  /* OTC section */
+  .otc-title { font-size: 1.5rem; }
+  .otc-hero-card { padding: 24px 20px; border-radius: 14px; max-width: 100%; }
+  .otc-amount span { font-size: 2.8rem; }
+  .otc-card-badge { font-size: .7rem; white-space: normal; }
+
+  /* General */
   .cta-banner-inner { flex-direction: column; text-align: center; }
   .footer-top { grid-template-columns: 1fr; }
 }

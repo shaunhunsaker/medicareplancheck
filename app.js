@@ -212,6 +212,10 @@ document.getElementById('formSubmit').addEventListener('click', async () => {
   if (typeof gtag !== 'undefined') {
     gtag('event', 'lead_form_submit', { event_category: 'Lead', event_label: payload.zip });
   }
+  // StackAdapt conversion event
+  if (typeof saq !== 'undefined') {
+    saq('conv', 'ay8PT5S3JLDKAjCC565w8A');
+  }
 
   // Show success
   bar.style.width = '100%';

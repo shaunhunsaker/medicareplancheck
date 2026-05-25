@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html><head>
+<meta charset="UTF-8"/>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{width:320px;height:50px;overflow:hidden;font-family:'Arial',sans-serif;background:linear-gradient(90deg,#0f2d5e 0%,#1a3a6e 50%,#0a5e3a 100%);cursor:pointer;}
+  .wrap{width:320px;height:50px;display:flex;align-items:center;justify-content:space-between;padding:0 10px;gap:8px;}
+
+  .logo{font-size:9px;font-weight:900;color:#fff;white-space:nowrap;flex-shrink:0;animation:fadeIn .4s ease both;}
+  .logo span{color:#7dd3fc;}
+  @keyframes fadeIn{from{opacity:0}to{opacity:1}}
+
+  .divider{width:1px;height:26px;background:rgba(255,255,255,.18);flex-shrink:0;}
+
+  .phone-wrap{flex:1;min-width:0;animation:fadeUp .5s ease .2s both;}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:translateY(0)}}
+  .phone-label{font-size:7.5px;color:rgba(255,255,255,.6);white-space:nowrap;}
+  .phone-num{font-size:12px;font-weight:900;color:#fbbf24;white-space:nowrap;letter-spacing:.02em;}
+
+  .cta{background:#16a34a;color:#fff;font-size:9.5px;font-weight:900;padding:8px 11px;border-radius:5px;white-space:nowrap;flex-shrink:0;text-align:center;line-height:1.2;animation:fadeUp .5s ease .4s both,pulse 2.2s ease 1.5s infinite;}
+  @keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(22,163,74,.6)}70%{box-shadow:0 0 0 4px rgba(22,163,74,0)}}
+</style>
+</head>
+<body>
+<div class="wrap" onclick="window.location.href='tel:18773391956'">
+  <div class="logo">Medicare<span>Plan</span>Check</div>
+  <div class="divider"></div>
+  <div class="phone-wrap">
+    <div class="phone-label">Free Medicare Review — Talk to a Real Agent</div>
+    <div class="phone-num">1-877-339-1956</div>
+  </div>
+  <div class="cta">📞 Tap<br/>to Call</div>
+</div>
+</body></html>

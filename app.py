@@ -63,7 +63,12 @@ def submit_lead():
             "first_name": data["first"].strip(),
             "last_name":  data["last"].strip(),
             "zip_code":   data["zip"].strip(),
-            "additional_context": f"Source: {data.get('source', 'medicareplancheck.org')}",
+            "additional_context": " | ".join(filter(None, [
+                f"Source: {data.get('source', 'medicareplancheck.org')}",
+                f"Medium: {data['utm_medium']}"   if data.get('utm_medium')   else "",
+                f"Campaign: {data['utm_campaign']}" if data.get('utm_campaign') else "",
+                f"Creative: {data['utm_content']}"  if data.get('utm_content')  else "",
+            ])),
         }]
     }
 

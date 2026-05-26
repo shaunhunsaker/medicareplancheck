@@ -1,3 +1,14 @@
+// ===== UTM CAPTURE =====
+const _utmParams = (function() {
+  const p = new URLSearchParams(window.location.search);
+  return {
+    source:   p.get('utm_source')   || '',
+    medium:   p.get('utm_medium')   || '',
+    campaign: p.get('utm_campaign') || '',
+    content:  p.get('utm_content')  || '',
+  };
+})();
+
 // ===== CONFETTI =====
 function launchConfetti() {
   const canvas = document.getElementById('confettiCanvas');
@@ -193,7 +204,10 @@ document.getElementById('formSubmit').addEventListener('click', async () => {
     first: document.getElementById('firstInput').value.trim(),
     last:  document.getElementById('lastInput').value.trim(),
     phone: phone,
-    source: window.location.hostname,
+    source: _utmParams.source || window.location.hostname,
+    utm_medium:   _utmParams.medium,
+    utm_campaign: _utmParams.campaign,
+    utm_content:  _utmParams.content,
   };
 
   try {

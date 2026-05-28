@@ -71,6 +71,7 @@ def submit_lead():
             "first_name": data["first"].strip(),
             "last_name":  data["last"].strip(),
             "zip_code":   data["zip"].strip(),
+            "cost_dollars": 0,
             "additional_context": " | ".join(filter(None, [
                 f"Source: {data.get('source', 'medicareplancheck.org')}",
                 f"Medium: {data['utm_medium']}"   if data.get('utm_medium')   else "",
@@ -88,16 +89,20 @@ def submit_lead():
             timeout=10,
         )
         result = resp.json()
-        app.logger.info("Onyx raw response: %s", result)
-        accepted = result.get("total_accepted", "?")
+        accepted = result.get("total_accepted", 0)
         rejected = result.get("total_rejected", 0)
-        app.logger.info("Onyx accepted=%s rejected=%s phone=%s", accepted, rejected, phone)
+        lead_result = (result.get("results") or [{}])[0]
+        lead_id  = lead_result.get("lead_id")
+        status   = lead_result.get("status", "unknown")
+        reason   = lead_result.get("reason")
 
-        if rejected:
-            reason = (result.get("results") or [{}])[0].get("reason", "unknown")
-            app.logger.warning("Onyx rejected lead: %s", reason)
+        app.logger.info("Onyx status=%s accepted=%s rejected=%s lead_id=%s phone=%s",
+                        status, accepted, rejected, lead_id, phone)
 
-        return jsonify(ok=True, accepted=accepted, rejected=rejected), 200
+        if rejected or status == "rejected":
+            app.logger.warning("Onyx rejected lead: %s", reason or "no reason given")
+
+        return jsonify(ok=True, accepted=accepted, rejected=rejected, lead_id=lead_id), 200
 
     except requests.exceptions.Timeout:
         app.logger.error("Onyx request timed out for %s", phone)

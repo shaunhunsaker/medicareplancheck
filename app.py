@@ -88,6 +88,7 @@ def submit_lead():
             timeout=10,
         )
         result = resp.json()
+        app.logger.info("Onyx raw response: %s", result)
         accepted = result.get("total_accepted", "?")
         rejected = result.get("total_rejected", 0)
         app.logger.info("Onyx accepted=%s rejected=%s phone=%s", accepted, rejected, phone)

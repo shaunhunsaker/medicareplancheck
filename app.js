@@ -231,7 +231,7 @@ document.getElementById('formSubmit').addEventListener('click', async () => {
     saq('conv', 'ay8PT5S3JLDKAjCC565w8A');
   }
 
-  // Show success
+  // Show success then redirect to thank-you page
   bar.style.width = '100%';
   dots.forEach(d => { d.classList.remove('active'); d.classList.add('done'); });
   lines.forEach(l => l.classList.add('done'));
@@ -239,6 +239,7 @@ document.getElementById('formSubmit').addEventListener('click', async () => {
   document.getElementById('successPhone').textContent = phone;
   document.getElementById('stepSuccess').classList.remove('hidden');
   launchConfetti();
+  setTimeout(() => { window.location.href = '/thank-you'; }, 2500);
 });
 
 document.getElementById('phoneBack').addEventListener('click', () => goToStep(2));

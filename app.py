@@ -19,11 +19,15 @@ app = Flask(__name__, static_folder=".", static_url_path="")
 
 # ── Static files ──────────────────────────────────────────────────────────────
 
-ALLOWED_STATIC = {"index.html", "styles.css", "app.js", "robots.txt", "favicon.ico"}
+ALLOWED_STATIC = {"index.html", "thank-you.html", "styles.css", "app.js", "robots.txt", "favicon.ico"}
 
 @app.route("/")
 def index():
     return send_from_directory(".", "index.html")
+
+@app.route("/thank-you")
+def thank_you():
+    return send_from_directory(".", "thank-you.html")
 
 @app.route("/robots.txt")
 def robots():

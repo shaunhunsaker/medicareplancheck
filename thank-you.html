@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>You're All Set | MedicarePlanCheck</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <!-- StackAdapt Universal Pixel + Conversion -->
+  <script>!function(s,a,e,v,n,t,z){if(s.saq)return;n=s.saq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!s._saq)s._saq=n;n.push=n;n.loaded=!0;n.version='1.0';n.queue=[];t=a.createElement(e);t.async=!0;t.src=v;z=a.getElementsByTagName(e)[0];z.parentNode.insertBefore(t,z)}(window,document,'script','https://tags.srv.stackadapt.com/events.js');saq('ts', 'ay8PT5S3JLDKAjCC565w8A');saq('conv', 'ay8PT5S3JLDKAjCC565w8A');</script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f0f4ff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 24px 16px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 20px;
+      box-shadow: 0 8px 40px rgba(26,86,219,0.10);
+      max-width: 520px;
+      width: 100%;
+      padding: 48px 40px 40px;
+      text-align: center;
+    }
+
+    .check-circle {
+      width: 72px;
+      height: 72px;
+      background: linear-gradient(135deg, #0a8f5c, #16a34a);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 24px;
+      font-size: 36px;
+    }
+
+    .logo {
+      font-size: 13px;
+      font-weight: 800;
+      color: #1a56db;
+      letter-spacing: -0.01em;
+      margin-bottom: 20px;
+    }
+    .logo span { color: #0a8f5c; }
+
+    h1 {
+      font-size: 28px;
+      font-weight: 800;
+      color: #111827;
+      line-height: 1.2;
+      margin-bottom: 12px;
+    }
+
+    .subtitle {
+      font-size: 16px;
+      color: #6b7280;
+      line-height: 1.6;
+      margin-bottom: 32px;
+    }
+
+    .divider {
+      border: none;
+      border-top: 1px solid #e5e7eb;
+      margin: 0 0 28px;
+    }
+
+    .call-nudge {
+      background: linear-gradient(135deg, #eff6ff, #ecfdf5);
+      border: 1.5px solid #bfdbfe;
+      border-radius: 14px;
+      padding: 22px 20px;
+      margin-bottom: 20px;
+    }
+
+    .call-nudge p {
+      font-size: 14px;
+      font-weight: 600;
+      color: #374151;
+      margin-bottom: 14px;
+    }
+
+    .call-btn {
+      display: block;
+      background: linear-gradient(135deg, #16a34a, #15803d);
+      color: #fff;
+      font-size: 20px;
+      font-weight: 800;
+      text-decoration: none;
+      padding: 16px 24px;
+      border-radius: 100px;
+      letter-spacing: -0.01em;
+      transition: transform 0.15s, box-shadow 0.15s;
+      box-shadow: 0 4px 18px rgba(22,163,74,0.35);
+    }
+    .call-btn:hover { transform: translateY(-1px); box-shadow: 0 6px 24px rgba(22,163,74,0.45); }
+
+    .call-sub {
+      font-size: 12px;
+      color: #9ca3af;
+      margin-top: 10px;
+    }
+
+    .what-next {
+      text-align: left;
+      margin-bottom: 28px;
+    }
+    .what-next h3 {
+      font-size: 13px;
+      font-weight: 700;
+      color: #6b7280;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      margin-bottom: 12px;
+    }
+    .step {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+    .step-num {
+      width: 24px;
+      height: 24px;
+      background: #1a56db;
+      color: #fff;
+      border-radius: 50%;
+      font-size: 12px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .step p { font-size: 14px; color: #374151; line-height: 1.5; }
+    .step strong { color: #111827; }
+
+    .disc {
+      font-size: 11px;
+      color: #9ca3af;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 480px) {
+      .card { padding: 36px 24px 28px; }
+      h1 { font-size: 24px; }
+      .call-btn { font-size: 18px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="logo">Medicare<span>Plan</span>Check</div>
+    <div class="check-circle">✓</div>
+    <h1>You're all set!<br/>A licensed agent will call you shortly.</h1>
+    <p class="subtitle">We're reviewing plans available in your area. Most people hear back within minutes during business hours.</p>
+
+    <hr class="divider" />
+
+    <div class="call-nudge">
+      <p>Don't want to wait? Talk to an agent right now — it's free.</p>
+      <a class="call-btn" href="tel:18773391956">📞 Call 1-877-339-1956</a>
+      <p class="call-sub">Mon–Fri 6:30am–4pm PT &nbsp;·&nbsp; No hold music &nbsp;·&nbsp; Real licensed agents</p>
+    </div>
+
+    <div class="what-next">
+      <h3>What happens next</h3>
+      <div class="step">
+        <div class="step-num">1</div>
+        <p><strong>We match your ZIP code</strong> to Medicare Advantage plans available in your area.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <p><strong>A licensed agent calls you</strong> to walk through what extra benefits could be included — dental, vision, OTC allowances and more.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <p><strong>Zero obligation.</strong> The review is completely free. Enroll only if a plan is a better fit for you.</p>
+      </div>
+    </div>
+
+    <p class="disc">Not affiliated with Medicare or the U.S. government. Benefits vary by plan and location. Licensed insurance agents. Not available in all areas.</p>
+  </div>
+</body>
+</html>

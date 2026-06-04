@@ -74,6 +74,10 @@ document.querySelectorAll('a[href^="tel:"]').forEach(link => {
     if (typeof gtag !== 'undefined') {
       gtag('event', 'phone_call_click', { event_category: 'CTA', event_label: link.textContent.trim() });
     }
+    // StackAdapt C2C conversion event
+    if (typeof saq !== 'undefined') {
+      saq('conv', 'ay8PT5S3JLDKAjCC565w8A');
+    }
   });
 });
 

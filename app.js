@@ -78,6 +78,10 @@ document.querySelectorAll('a[href^="tel:"]').forEach(link => {
     if (typeof saq !== 'undefined') {
       saq('conv', 'ay8PT5S3JLDKAjCC565w8A');
     }
+    // Meta phone call click event
+    if (typeof fbq !== 'undefined') {
+      fbq('track', 'Contact');
+    }
   });
 });
 

@@ -9,6 +9,9 @@ const _utmParams = (function() {
   };
 })();
 
+// StackAdapt call tracking is handled natively via the pixel's button-click param in index.html
+// (Phone Call Click conversion). Lead Form Submit fires via the /thank-you URL rule.
+
 // ===== CONFETTI =====
 function launchConfetti() {
   const canvas = document.getElementById('confettiCanvas');
@@ -74,13 +77,10 @@ document.querySelectorAll('a[href^="tel:"]').forEach(link => {
     if (typeof gtag !== 'undefined') {
       gtag('event', 'phone_call_click', { event_category: 'CTA', event_label: link.textContent.trim() });
     }
-    // StackAdapt C2C conversion event
-    if (typeof saq !== 'undefined') {
-      saq('conv', 'ay8PT5S3JLDKAjCC565w8A');
-    }
-    // Meta phone call click event
+    // Meta: keep 'Contact' for existing optimization, plus a distinct call-click signal
     if (typeof fbq !== 'undefined') {
       fbq('track', 'Contact');
+      fbq('trackCustom', 'PhoneCallClick');
     }
   });
 });
@@ -233,10 +233,6 @@ document.getElementById('formSubmit').addEventListener('click', async () => {
   // Track conversion
   if (typeof gtag !== 'undefined') {
     gtag('event', 'lead_form_submit', { event_category: 'Lead', event_label: payload.zip });
-  }
-  // StackAdapt conversion event
-  if (typeof saq !== 'undefined') {
-    saq('conv', 'ay8PT5S3JLDKAjCC565w8A');
   }
 
   // Show success then redirect to thank-you page

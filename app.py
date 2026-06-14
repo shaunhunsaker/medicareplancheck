@@ -17,13 +17,36 @@ ONYX_ENDPOINT = os.environ.get("ONYX_ENDPOINT", "")
 
 app = Flask(__name__, static_folder=".", static_url_path="")
 
+# ── State advertorial network (Host-based routing) ──────────────────────────────
+# Every state domain points (DNS) to this same app; we dispatch on the Host header.
+# Add a state = one line here + drop its HTML in state-sites/.
+STATE_SITES = {
+    "texasplancheck.org":         "tx-extra-benefits-advertorial.html",
+    "northcarolinaplancheck.org": "nc-extra-benefits-advertorial.html",
+    "floridaplancheck.org":       "fl-extra-benefits-advertorial.html",
+}
+
+def _advertorial_for_host():
+    """Return the advertorial filename if the request Host is a state site, else None."""
+    host = request.host.split(":")[0].lower()
+    if host.startswith("www."):
+        host = host[4:]
+    return STATE_SITES.get(host)
+
 # ── Static files ──────────────────────────────────────────────────────────────
 
 ALLOWED_STATIC = {"index.html", "thank-you.html", "privacy-policy.html", "styles.css", "app.js", "robots.txt", "favicon.ico"}
 
 @app.route("/")
 def index():
+    advertorial = _advertorial_for_host()
+    if advertorial:
+        return send_from_directory("state-sites", advertorial)
     return send_from_directory(".", "index.html")
+
+@app.route("/hero-benefits-review.jpg")
+def advertorial_hero():
+    return send_from_directory("state-sites", "hero-benefits-review.jpg", mimetype="image/jpeg")
 
 @app.route("/thank-you")
 def thank_you():

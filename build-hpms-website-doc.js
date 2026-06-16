@@ -126,7 +126,6 @@ const doc = new Document({
         "Footer links for Terms of Use and Accessibility still point to \"#\" (Privacy Policy and Do Not Sell My Info are live).",
         "Specific dollar figures (\"$150/Month,\" \"Up to $150\") appear; qualifiers are present but confirm acceptable for HPMS.",
         "Substantiation: \"500k+ People Helped,\" \"Helping Americans … since 2018,\" and \"Same-day enrollment available\" are factual claims — ensure they are substantiated or softened.",
-        "Outdated figure: FAQ cites Part B premium \"$174.70/month in 2024\" — update to the current year/amount.",
       ]),
     ],
   }],

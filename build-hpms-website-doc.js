@@ -36,7 +36,7 @@ function flagBox(title, color, lines) {
 const TCPA = "By submitting this form, I provide my express written consent to be contacted by MedicarePlanCheck.org and its licensed insurance agents at the phone number provided, including via live agent, automated dialing system, pre-recorded message, and/or text/SMS, regarding Medicare Advantage and Supplement insurance plans. I understand consent is not required as a condition of purchasing any insurance product. Message & data rates may apply. Reply STOP to opt out of texts. See our Privacy Policy.";
 const DISCLAIMER = "Not affiliated with or endorsed by the U.S. government, CMS, or the federal Medicare program. MedicarePlanCheck.org is a licensed insurance marketing organization (IMO). We represent multiple insurance carriers and are compensated by insurers if you enroll in a plan. This is a solicitation for insurance. Plans are insured or covered by a Medicare Advantage organization and/or a Medicare-approved Part D sponsor. Enrollment depends on the plan's contract renewal. Calling this number connects you with a licensed insurance agent. Benefits and plan availability vary by location and are subject to change. Not all plans available in all areas. We do not offer every plan available in your area. Any information we provide is limited to those plans we do offer in your area. Please contact Medicare.gov, 1-800-MEDICARE, or your local State Health Insurance Program (SHIP) to get information on all of your options.";
 
-const SMID = "NSBA_MULTIPLAN_MPC_WEB26_LP1_M  (displayed in site footer)";
+const SMID = "MULTIPLAN_MPCWeb26LP1_M  (displayed in site footer)";
 
 const doc = new Document({
   creator: "Medicare Finder",

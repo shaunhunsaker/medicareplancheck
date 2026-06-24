@@ -37,7 +37,7 @@ function flagBox(lines) {
 const TPMO = "We do not offer every plan available in your area. Any information we provide is limited to those plans we do offer in your area. Please contact Medicare.gov, 1-800-MEDICARE, or your local State Health Insurance Program (SHIP) to get information on all of your options.";
 
 const STATES = [
-  { code: "tx", name: "Texas", domain: "TexasPlanCheck.org", phone: "1-888-595-8641", tz: "CT", smid: "MULTIPLAN_MPCNativeTX26_M", shot: "submission-shot-tx.png" },
+  { code: "tx", name: "Texas", domain: "TexasPlanCheck.org", phone: "1-866-312-7162", tz: "CT", smid: "MULTIPLAN_MPCNativeTX26_M", shot: "submission-shot-tx.png" },
   { code: "nc", name: "North Carolina", domain: "NorthCarolinaPlanCheck.org", phone: "1-888-595-8709", tz: "ET", smid: "MULTIPLAN_MPCNativeNC26_M", shot: "submission-shot-nc.png" },
   { code: "fl", name: "Florida", domain: "FloridaPlanCheck.org", phone: "1-888-595-8806", tz: "ET", smid: "MULTIPLAN_MPCNativeFL26_M", shot: "submission-shot-fl.png" },
 ];

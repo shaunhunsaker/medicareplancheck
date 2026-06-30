@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SeniorPlanCheck — Compare 2026 Medicare Advantage Plans</title>
+<style>
+  :root{
+    --green:#16604a; --green-d:#0f4636; --gold:#e3a519; --gold-d:#c8890c;
+    --bg:#eaf4ee; --card:#ffffff; --ink:#1f2a26; --muted:#5b6b64; --line:#dfe7e1; --ok:#1f7a52;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;font-family:-apple-system,"Segoe UI",Arial,sans-serif}
+  body{background:var(--bg);color:var(--ink);font-size:18px;line-height:1.55}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+
+  /* top banner */
+  .banner{background:var(--gold);color:#3a2a02;text-align:center;font-weight:800;font-size:17px;padding:11px 14px}
+
+  /* header */
+  header{background:#fff;border-bottom:1px solid var(--line)}
+  .hdr{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:14px 20px;max-width:1040px;margin:0 auto}
+  .brand{font-weight:900;font-size:23px;color:var(--green);letter-spacing:-.02em;line-height:1.05}
+  .brand span{color:var(--gold)}
+  .brand small{display:block;font-size:10px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--muted)}
+  .hcall{display:flex;align-items:center;gap:12px}
+  .hcall .ic{flex:none;width:44px;height:44px;border-radius:50%;background:#eef6f1;color:var(--green);display:flex;align-items:center;justify-content:center;font-size:22px}
+  .hcall .t{line-height:1.2}
+  .hcall .t .lab{font-size:12px;color:var(--muted);font-weight:600}
+  .hcall .t .num{font-size:21px;font-weight:900;color:var(--green)}
+  .hcall .t .hrs{font-size:10px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--muted)}
+
+  /* stage */
+  .stage{min-height:62vh;display:flex;align-items:flex-start;justify-content:center;padding:42px 0 56px}
+  .panel{background:var(--card);border-radius:20px;box-shadow:0 14px 40px rgba(15,70,54,.10);max-width:680px;width:100%;padding:44px 40px;text-align:center}
+
+  .eyebrow{display:inline-block;background:#fff3d6;color:var(--gold-d);font-weight:800;font-size:13px;letter-spacing:.06em;text-transform:uppercase;padding:7px 16px;border-radius:100px;margin-bottom:18px}
+  h1{font-size:34px;line-height:1.14;font-weight:900;letter-spacing:-.01em;color:var(--green-d);margin-bottom:16px}
+  .lede{font-size:19px;color:var(--muted);margin-bottom:14px}
+  .lede strong{color:var(--ink)}
+
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:var(--gold);color:#3a2a02;font-weight:900;font-size:23px;padding:18px 40px;border:none;border-radius:100px;cursor:pointer;box-shadow:0 6px 0 var(--gold-d);transition:transform .05s}
+  .btn:active{transform:translateY(3px);box-shadow:0 3px 0 var(--gold-d)}
+  .secure{margin-top:18px;font-size:14px;color:var(--muted)}
+
+  /* progress */
+  .prog{display:flex;gap:10px;justify-content:center;margin-bottom:26px}
+  .prog i{width:46px;height:8px;border-radius:100px;background:var(--line)}
+  .prog i.on{background:var(--green)}
+
+  .qh{font-size:30px;font-weight:900;color:var(--green-d);margin-bottom:26px}
+  .choices{display:flex;flex-direction:column;gap:14px;max-width:440px;margin:0 auto}
+  .choice{border:2px solid var(--line);background:#fff;border-radius:14px;padding:18px;font-size:20px;font-weight:800;cursor:pointer;transition:all .12s}
+  .choice:hover{border-color:var(--green);background:#f3f9f5}
+  .skip{margin-top:18px;color:var(--muted);font-weight:700;font-size:16px;cursor:pointer;display:inline-block}
+  .skip:hover{color:var(--green)}
+
+  /* result */
+  .res-sub{font-size:19px;color:var(--muted);margin-bottom:8px}
+  .res-call{font-size:17px;color:var(--ink);font-weight:700;margin:22px 0 16px}
+  .callbox{display:flex;align-items:center;gap:18px;justify-content:center;background:var(--green);color:#fff;border-radius:16px;padding:22px 26px;max-width:520px;margin:0 auto}
+  .callbox .ic{flex:none;width:58px;height:58px;border-radius:12px;background:rgba(255,255,255,.14);display:flex;align-items:center;justify-content:center;font-size:28px}
+  .callbox>span{text-align:left}
+  .callbox .num{display:block;font-size:30px;font-weight:900;line-height:1.1;white-space:nowrap}
+  .callbox .lab{display:block;font-size:12px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:#bfe3d3;margin-bottom:3px}
+  .hours{margin-top:18px;font-weight:800;color:var(--ink)}
+  .hours b{color:var(--green)}
+
+  .screen{display:none}
+  .screen.active{display:block;animation:fade .25s ease}
+  @keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+  /* footer */
+  footer{background:#fff;border-top:1px solid var(--line);padding:26px 0 44px;font-size:12.5px;color:var(--muted);line-height:1.6}
+  footer .flogo{font-weight:900;color:var(--green);font-size:18px;text-align:center;margin-bottom:8px}
+  footer .flogo span{color:var(--gold)}
+  footer .links{text-align:center;margin:6px 0 14px;font-weight:700}
+  footer .links a{color:var(--green);margin:0 10px}
+  .disc{margin-top:8px}
+  .smid{margin-top:14px;font-size:11px;color:#9aa8a1;text-align:center}
+  .copy{text-align:center;margin-top:6px}
+
+  @media(max-width:640px){
+    .banner{font-size:14px}
+    .hcall .t .lab,.hcall .t .hrs{display:none}
+    .hcall .ic{width:38px;height:38px}
+    .brand small{display:none}
+    .panel{padding:32px 22px}
+    h1{font-size:27px}
+    .qh{font-size:24px}
+    .callbox .num{font-size:24px}
+  }
+</style>
+</head>
+<body>
+
+<div class="banner">New to Medicare? Lost your coverage? Recently moved?</div>
+
+<header>
+  <div class="hdr">
+    <div class="brand">Senior<span>PlanCheck</span><small>A non-government entity</small></div>
+    <a class="hcall" href="tel:+18883912219">
+      <span class="ic">📞</span>
+      <span class="t">
+        <span class="lab">Speak with a licensed insurance agent</span>
+        <span class="num">1-888-391-2219 <span style="font-size:14px;color:var(--muted)">(TTY 711)</span></span>
+        <span class="hrs">Call toll-free · Mon–Fri 9:30 AM–7:30 PM ET</span>
+      </span>
+    </a>
+  </div>
+</header>
+
+<div class="stage">
+  <div class="panel">
+
+    <!-- STEP 0: LANDING -->
+    <div class="screen active" id="s0">
+      <span class="eyebrow">2026 Medicare Advantage</span>
+      <h1>Compare 2026 Medicare Advantage Plans — Here’s How</h1>
+      <p class="lede">Answer two quick questions before speaking with a licensed insurance agent who can help you find the right plan.</p>
+      <p class="lede"><strong>Completely free to compare — no obligation to enroll.</strong></p>
+      <div style="margin-top:26px"><button class="btn" onclick="go(1)">Get Started →</button></div>
+      <p class="secure">🔒 We keep your information 100% secure &amp; confidential.</p>
+    </div>
+
+    <!-- STEP 1: AGE -->
+    <div class="screen" id="s1">
+      <div class="prog"><i class="on"></i><i></i></div>
+      <div class="qh">Tap your age</div>
+      <div class="choices">
+        <div class="choice" onclick="pick('age','under65')">I’m Under 65</div>
+        <div class="choice" onclick="pick('age','65to74')">65 to 74</div>
+        <div class="choice" onclick="pick('age','over74')">Over 74</div>
+      </div>
+      <span class="skip" onclick="pick('age','na')">Prefer not to say</span>
+    </div>
+
+    <!-- STEP 2: ENROLLED -->
+    <div class="screen" id="s2">
+      <div class="prog"><i class="on"></i><i class="on"></i></div>
+      <div class="qh">Are you currently enrolled in<br>Medicare Part A and Part B?</div>
+      <div class="choices">
+        <div class="choice" onclick="pick('enrolled','yes')">Yes</div>
+        <div class="choice" onclick="pick('enrolled','no')">No</div>
+      </div>
+      <span class="skip" onclick="pick('enrolled','na')">Prefer not to say</span>
+    </div>
+
+    <!-- STEP 3: RESULT -->
+    <div class="screen" id="s3">
+      <h1 style="color:var(--ok)">Congratulations!</h1>
+      <p class="res-sub" id="resSub">You may be eligible for Medicare Advantage plans with additional benefits.</p>
+      <p class="res-call">Call now to speak with a licensed insurance agent:</p>
+      <a class="callbox" href="tel:+18883912219">
+        <span class="ic">📞</span>
+        <span>
+          <span class="lab">Click to call · Toll-free</span>
+          <span class="num">1-888-391-2219</span>
+        </span>
+      </a>
+      <p class="hours">Toll-free <b>(TTY 711)</b> · Mon–Fri 9:30 AM–7:30 PM ET</p>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="flogo">Senior<span>PlanCheck</span></div>
+    <div class="links"><a href="/privacy-policy.html">Privacy Policy</a>|<a href="/terms.html">Terms of Use</a></div>
+    <p>SeniorPlanCheck is operated by Medicare Finder, a licensed insurance agency, and is not affiliated with or endorsed by any government agency, the Centers for Medicare &amp; Medicaid Services (CMS), or the federal Medicare program.</p>
+    <p class="disc">We do not offer every plan available in your area. Currently we represent [INSERT #] organizations which offer [INSERT #] products in your area. Please contact Medicare.gov, 1-800-MEDICARE, or your local State Health Insurance Program (SHIP) to get information on all of your options.</p>
+    <p class="disc">Enrollment in a plan may be limited to certain times of the year unless you qualify for a Special Enrollment Period or you are in your Medicare Initial Enrollment Period.</p>
+    <p class="disc">Participating plans may represent Medicare Advantage [HMO, PPO and PFFS] organizations and stand-alone PDP prescription drug plans with a Medicare contract. Enrollment depends on the plan’s contract renewal with Medicare. Not all plans offer all benefits; benefits may vary by carrier and location.</p>
+    <p class="copy">© 2026 Medicare Finder. All rights reserved.</p>
+    <p class="smid">MULTIPLAN_SPCWeb26LP1_M</p>
+  </div>
+</footer>
+
+<script>
+  var answers={age:null,enrolled:null};
+  function show(id){
+    document.querySelectorAll('.screen').forEach(function(s){s.classList.remove('active')});
+    document.getElementById(id).classList.add('active');
+    window.scrollTo({top:0,behavior:'auto'});
+  }
+  function go(step){ show('s'+step); }
+  function pick(q,val){
+    answers[q]=val;
+    if(q==='age'){ go(2); }
+    else if(q==='enrolled'){ result(); }
+  }
+  function result(){
+    var sub=document.getElementById('resSub');
+    if(answers.enrolled==='no'){
+      sub.textContent='A licensed agent can walk you through enrolling in Medicare Part A and Part B and review the plan options available where you live.';
+    } else if(answers.age==='under65'){
+      sub.textContent='You may still have options. A licensed agent can review what may be available to you.';
+    } else {
+      sub.textContent='You may be eligible for Medicare Advantage plans with additional benefits.';
+    }
+    go(3);
+  }
+</script>
+</body>
+</html>

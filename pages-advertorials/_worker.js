@@ -6,6 +6,7 @@ const STATE_SITES = {
   "texasplancheck.org":         "tx.html",
   "northcarolinaplancheck.org": "nc.html",
   "floridaplancheck.org":       "fl.html",
+  "seniorplancheck.org":        "seniorplancheck.html",
 };
 
 export default {
@@ -16,6 +17,11 @@ export default {
 
     // Static assets (hero image, css, etc.) — serve directly from the output dir.
     if (/\.(jpg|jpeg|png|gif|svg|webp|ico|css|js|woff2?)$/i.test(url.pathname)) {
+      return env.ASSETS.fetch(request);
+    }
+
+    // Brand sub-pages (privacy / terms) — serve the actual file, not the funnel.
+    if (url.pathname === "/privacy-policy.html" || url.pathname === "/terms.html") {
       return env.ASSETS.fetch(request);
     }
 

@@ -21,7 +21,8 @@ export default {
     }
 
     // Brand sub-pages (privacy / terms) — serve the actual file, not the funnel.
-    if (url.pathname === "/privacy-policy.html" || url.pathname === "/terms.html") {
+    // Match .html AND the clean URL Cloudflare Pages 308-redirects to (and trailing slash).
+    if (/^\/(privacy-policy|terms)(\.html)?\/?$/.test(url.pathname)) {
       return env.ASSETS.fetch(request);
     }
 

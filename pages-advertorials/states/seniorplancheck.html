@@ -102,7 +102,7 @@
     <a class="hcall" href="tel:+18665073634">
       <span class="ic">📞</span>
       <span class="t">
-        <span class="lab">Speak with a licensed insurance agent</span>
+        <span class="lab">Speak with a licensed sales agent</span>
         <span class="num">1-866-507-3634 <span style="font-size:14px;color:var(--muted)">(TTY 711)</span></span>
         <span class="hrs">Call toll-free · Mon–Fri 9:30 AM–7:30 PM ET</span>
       </span>
@@ -117,7 +117,7 @@
     <div class="screen active" id="s0">
       <span class="eyebrow">2026 Medicare Advantage</span>
       <h1>Compare 2026 Medicare Advantage Plans — Here’s How</h1>
-      <p class="lede">Answer two quick questions before speaking with a licensed insurance agent who can help you find the right plan.</p>
+      <p class="lede">Answer two quick questions before speaking with a licensed sales agent who can help you find the right plan.</p>
       <p class="lede"><strong>Completely free to compare — no obligation to enroll.</strong></p>
       <div style="margin-top:26px"><button class="btn" onclick="go(1)">Get Started →</button></div>
       <p class="secure">🔒 We keep your information 100% secure &amp; confidential.</p>
@@ -150,7 +150,7 @@
     <div class="screen" id="s3">
       <h1 style="color:var(--ok)">Congratulations!</h1>
       <p class="res-sub" id="resSub">You may be eligible for Medicare Advantage plans with additional benefits.</p>
-      <p class="res-call">Call now to speak with a licensed insurance agent:</p>
+      <p class="res-call">Call now to speak with a licensed sales agent:</p>
       <a class="callbox" href="tel:+18665073634">
         <span class="ic">📞</span>
         <span>
@@ -171,6 +171,7 @@
     <p>SeniorPlanCheck is operated by Medicare Finder, a licensed insurance agency, and is not affiliated with or endorsed by any government agency, the Centers for Medicare &amp; Medicaid Services (CMS), or the federal Medicare program.</p>
     <p class="disc">We do not offer every plan available in your area. Any information we provide is limited to those plans we do offer in your area. Please contact Medicare.gov, 1-800-MEDICARE, or your local State Health Insurance Program (SHIP) to get information on all of your options.</p>
     <p class="disc">Enrollment in a plan may be limited to certain times of the year unless you qualify for a Special Enrollment Period or you are in your Medicare Initial Enrollment Period.</p>
+    <p class="disc">This is a solicitation for insurance.</p>
     <p class="disc">Participating plans may represent Medicare Advantage [HMO, PPO and PFFS] organizations and stand-alone PDP prescription drug plans with a Medicare contract. Enrollment depends on the plan’s contract renewal with Medicare. Not all plans offer all benefits; benefits may vary by carrier and location.</p>
     <p class="copy">© 2026 Medicare Finder. All rights reserved.</p>
     <p class="smid">MULTIPLAN_SPCWeb26LP1_M</p>
@@ -193,9 +194,9 @@
   function result(){
     var sub=document.getElementById('resSub');
     if(answers.enrolled==='no'){
-      sub.textContent='A licensed agent can walk you through enrolling in Medicare Part A and Part B and review the plan options available where you live.';
+      sub.textContent='A licensed sales agent can walk you through enrolling in Medicare Part A and Part B and review the plan options available where you live.';
     } else if(answers.age==='under65'){
-      sub.textContent='You may still have options. A licensed agent can review what may be available to you.';
+      sub.textContent='You may still have options. A licensed sales agent can review what may be available to you.';
     } else {
       sub.textContent='You may be eligible for Medicare Advantage plans with additional benefits.';
     }
